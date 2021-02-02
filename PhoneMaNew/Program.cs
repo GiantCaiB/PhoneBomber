@@ -17,11 +17,11 @@ namespace PhoneMaNew
 
             try
             {
-                var customerSync = JobService.CreateHostBuilder(new string[] { })
+                var bombingJob = JobService.CreateHostBuilder(new string[] { })
                     .Build()
                     .Services.CreateScope()
                     .ServiceProvider.GetRequiredService<BombingJob>();
-                customerSync.Execute(null).Wait();
+                bombingJob.Execute(null).Wait();
             }
             catch (Exception e)
             {
